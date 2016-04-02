@@ -1,0 +1,70 @@
+body{
+  width:   800px;
+  height:  auto;
+
+  padding: 20px;
+
+}
+
+.projet{
+  border:2px solid black;
+}
+
+.nom_projet{
+  width:  auto;
+  height: auto;
+
+}
+
+.img_projet{
+  width:  auto;
+  height: auto;
+
+}
+
+img {
+  width : 300px;
+  height: 200px;
+}
+
+.createur_projet{
+  width:  auto;
+  height: auto;
+
+}
+
+.montantActuel_projet{
+  width:  auto;
+  height: auto;
+
+}
+
+.pourcentMontant_projet{
+  width:  auto;
+  height: auto;
+
+}
+
+.butMontant_projet{
+  width:  auto;
+  height: auto;
+
+}
+
+.description_projet{
+  width:  auto;
+  height: auto;
+
+}
+
+.redirection_projet{
+  width:  auto;
+  height: auto;
+
+}
+
+.tempsRestant_projet{
+  width:  auto;
+  height: auto;
+
+}
