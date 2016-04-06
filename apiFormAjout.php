@@ -33,12 +33,14 @@ echo "<nav>
 
 ?>
 
-<form method="POST" action="apiFormAjout.php">
-  <input type="text" name="titleLinks" id="titleLinks" placeholder="Titre de la vidéo"/><br/>
-  <input type="text" name="dailyLinks" id="dailyLinks" placeholder="http://www.dailymotion.com/video/x3wl5rc_iker-casillas-rate-sa-sortie_sport"/><br/>
-  <textarea rows="4" cols="50" name="describeLinks" id="describeLinks" placeholder="Description"></textarea><br/>
-  <input type="submit" name="submitVerifLinks" id="submitVerifLinks"/>
-</form>
+<article>
+  <div class="tuto-content">
+  <form method="POST" action="apiFormAjout.php">
+    <input type="text" name="titleLinks" id="titleLinks" placeholder="Titre de la vidéo"/><br/>
+    <input type="text" name="dailyLinks" id="dailyLinks" placeholder="http://www.dailymotion.com/video/x3wl5rc_iker-casillas-rate-sa-sortie_sport"/><br/>
+    <textarea rows="4" cols="50" name="describeLinks" id="describeLinks" placeholder="Description"></textarea><br/>
+    <input type="submit" name="submitVerifLinks" id="submitVerifLinks"/>
+  </form>
 
 <?php
 
@@ -151,4 +153,10 @@ $prepare->execute(array(
   'embedVideo' => $requestDecode->embed_html
 ));
 header('Location:voirTutoAjouter.php');
+?>
+</div>
+</article>
+
+<?php
+include('includes/footer.php');
 ?>
