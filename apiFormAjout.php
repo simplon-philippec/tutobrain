@@ -1,6 +1,36 @@
 <?php
 include('includes/head.php');
 include('includes/bdd.php');
+
+echo "<nav>
+  <div class='lien'>
+  <a href=accueil.php >
+    <input type='button' value='Retour Accueil'/>
+  </a>
+  <a href='animaux.php' >
+    <input type='button' value='ANIMAUX'/>
+  </a>
+  <a href='beaute.php' >
+    <input type='button' value='BEAUTE'/>
+  </a>
+  <a href='brico.php' >
+    <input type='button' value='BRICO'/>
+  </a>
+  <a href='jardinage.php' >
+    <input type='button' value='JARDINAGE'/>
+  </a>
+  <a href='cuisine.php' >
+    <input type='button' value='CUISINE'/>
+  </a>
+  <a href='apiFormAjout.php' >
+    <input type='button' value='Ajouter un Tuto'/>
+  </a>
+  <a href='voirTutoAjouter.php' >
+    <input type='button' value='Voir les Tutos'/>
+  </a>
+</div>
+</nav><br/>";
+
 ?>
 
 <form method="POST" action="apiFormAjout.php">
@@ -55,17 +85,6 @@ else {
 echo "</p>";
 // FIN DESCRIPTION
 
-// VIDEO
-echo "<p><strong>Video : </strong><br/>";
-if (empty($requestDecode->embed_html)){
-  echo "Pas de vidéo pour le moment";
-}
-else{
-  echo $requestDecode->embed_html;
-}
-echo "</p>";
-// FIN VIDEO
-
 // MINIATURE
 echo "<p><strong>Miniature Video : </strong><br/>";
 if (empty($requestDecode->thumbnail_url)){
@@ -76,6 +95,17 @@ echo "<img src='" .$requestDecode->thumbnail_url. "'>";
 }
 echo "</p>";
 // FIN MINIATURE
+
+// VIDEO
+echo "<p><strong>Video : </strong><br/>";
+if (empty($requestDecode->embed_html)){
+  echo "Pas de vidéo pour le moment";
+}
+else{
+  echo $requestDecode->embed_html;
+}
+echo "</p>";
+// FIN VIDEO
 
 // TAGS
 echo "<p><strong>Tags : </strong><br/>";
@@ -107,9 +137,7 @@ echo "</p>";
 // SI $requestDecode->title EST VIDE ECRIT DANS LA VARIABLE LA CHAINE DE CARACTERE "SANS TITRE"
 ?>
 
-<form method="POST" action="apiFormAjout.php">
-<input type="submit" name="submitVerifLinks" id="submitVerifLinks" value="Envoyer à coup sur ?"/>
-</form>
+
 
 <?php
 $prepare = $bdd->prepare('INSERT INTO tuto (titreVideo, descriptionVideo, idVideo, lienVideo, miniatureVideo, embedVideo)

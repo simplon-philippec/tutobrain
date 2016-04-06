@@ -1,9 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 body{
-  width:   800px;
-  height:  auto;
-
+  max-width:   1800px;
+  /*height:  auto;*/
   padding: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
 
+h1{
+  text-align: center;
 }
 
 .projet{
@@ -67,4 +72,49 @@ img {
   width:  auto;
   height: auto;
 
+}
+
+h1,p{
+    font-weight: lighter;
+}
+ .bottom-text-content{
+   font-size: 11px;
+}
+.tuto-content{
+    border: 1px solid darkred;
+    padding:20px;
+    margin-bottom: 15px;
+}
+ .video-content {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+ }
+.miniature{
+    cursor: pointer;
+}
+.video{
+    border: 5px solid darkred;
+    padding: 5px;
+}
+.logo{
+  width: 500px;
+  height: 171px;
+text-align: center;
+}
+.lien{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+.lien{
+  background-color: #3BB2EF;
+}
+.lien a input{
+  padding: 20px;
+  background-color: #3BB2EF;
+  border-radius: 50%;
+  border: 0;
+  color: white;
+  cursor:pointer;
 }

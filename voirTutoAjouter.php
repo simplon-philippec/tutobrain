@@ -2,34 +2,55 @@
 include('includes/head.php');
 include('includes/bdd.php');
 
-/*
- IL FAUT QUE J'UTILISE LES DONNEES QUI SE TROUVE SUR LA BDD ET FAIRE AFFICHER EN FONCTION D'ELLES :
 
- //   _________________________
- //  | le titre de la vidéo    |
- //  | la miniature            |
- //  | la description          |
- //  | tags                    |
- //  |_________________________|
+echo "
+<nav>
+  <div class='lien'>
+  <a href=accueil.php >
+    <input type='button' value='Retour Accueil'>
+  </a>
+  <a href='animaux.php' >
+    <input type='button' value='ANIMAUX'/>
+  </a>
+  <a href='beaute.php' >
+    <input type='button' value='BEAUTE'/>
+  </a>
+  <a href='brico.php' >
+    <input type='button' value='BRICO'/>
+  </a>
+  <a href='jardinage.php' >
+    <input type='button' value='JARDINAGE'/>
+  </a>
+  <a href='cuisine.php' >
+    <input type='button' value='CUISINE'/>
+  </a>
+  <a href='apiFormAjout.php' >
+    <input type='button' value='Ajouter un Tuto'/>
+  </a>
+  <a href='voirTutoAjouter.php' >
+    <input type='button' value='Voir les Tutos'/>
+  </a>
+</div>
+</nav>
+<br/>";
 
 
- IL VA FALLOIR :
- SELECTIONNER TOUT LES CHAMPS AVEC L'ID PRECIS GENERER PAR LA CREATION QUI LA PRECEDE
- AFFICHER LE TITRE
- AFFICHER LA DESCRIPTION
- AFFICHER LA MINIATURE
+echo "<img class='logo' src='images/logo.png'/>";
 
-*/
+echo "<h1>Tout les tutos :</h1>" ;
 
 $read = $bdd->query('SELECT titreVideo, descriptionVideo, lienVideo, miniatureVideo, embedVideo
 FROM tuto ORDER BY id DESC');
 while ($data = $read->fetch())
 {
   echo "
-  <div>
+  <div class='tuto-content'>
     <h3> Titre : " .$data['titreVideo']. "</h3>
-      <img src='" .$data['miniatureVideo']. "'/><br/>
-      <p>" .substr($data['descriptionVideo'], 0, 100). "<a href='#'>Voir plus</a></p>
+      <div class='video-content'>
+        <img class='miniature' src='" .$data['miniatureVideo']. "'/>
+        <br/>
+      <div class='video'> " .$data['embedVideo']. "</div></div>
+        <p>" .substr($data['descriptionVideo'], 0, 100). "[...] <a href='#'> Voir plus</a></p>
   </div>";
 }
 
