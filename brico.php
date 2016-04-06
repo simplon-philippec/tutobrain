@@ -41,7 +41,7 @@ echo "<h1>Tuto Brico :</h1>";
 
 foreach ($requestDecode->list as $key => $value) {
   echo "<div class='tuto-content'><h3>" .$requestDecode->list[$key]->title. "</h3><hr>";
-  echo "<div class='video-content'><img class='miniature' src='" .$requestDecode->list[$key]->thumbnail_url. "'>";
+  echo "<div class='video-content'><img class='miniature' src='" .$requestDecode->list[$key]->thumbnail_url. "'/>";
   echo "<div class='video'>" .$requestDecode->list[$key]->embed_html. "</div></div>";
   echo "<p>" .substr($requestDecode->list[$key]->description, 0, 100). "[...] <a href='#'>Voir plus</a></p>";
   echo "<p class='bottom-text-content'>Liens de la Vidéo : <a href='" .$requestDecode->list[$key]->embed_url. "'>" .$requestDecode->list[$key]->embed_url. "</a></p>";
